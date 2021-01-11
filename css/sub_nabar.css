@@ -1,0 +1,114 @@
+.navbar {
+    position: relative;
+    z-index: 100;
+    display: none;
+}
+.sub_navigation {
+    width: 80vw;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    z-index: 30;
+    top:0;
+    right: -80vw;
+    background-color: #fff;
+    box-shadow: inset 0px -1px 0px #F0F0F0;
+    border: 1px solid  #F0F0F0;
+    transition: right .8s cubic-bezier(1 , 0 , 0 , 1);
+}
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    list-style: none;
+}
+.nav-list-item {
+    box-shadow: inset 0px -1px 0px #F0F0F0;
+}
+.nav-list-item .nav-list-link {
+width: 7.1rem;
+height: 1.9rem;
+font-family: var(--font__roboto);
+font-style: normal;
+font-weight: normal;
+font-size: 1.6rem;
+line-height: 1.9rem;
+text-decoration: none;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+justify-content: center;
+/* Character/Primary .65 */
+
+color:var(--text__color);
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 1rem 0;
+}
+.nav-list-item:last-child a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .4rem .8rem;
+    width: 11.4rem;
+    height: 3.5rem;
+    background-color: #19C53F;
+    border-radius: .5rem;
+    color: #fff;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: var(--font__roboto);
+    font-weight: 400;
+    box-shadow: inset 0px -1px 0px #F0F0F0;
+}
+.hamburger-menu {
+    width: 4rem;
+    height: 4rem;
+    position: fixed;
+    right: 5%;
+    top:10%;
+    z-index: 300;
+   
+}
+.menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: transform .5s ;
+    cursor: pointer;
+}
+.menu-line {
+    width: 100%;
+    height: .4rem;
+    background-color: #000;
+    transform-origin: right;
+    transition: all .5s .5s;
+    z-index: 300;
+}
+.check {
+    display: none;
+}
+.check:checked ~ .hamburger-menu .menu {
+    transform: rotateZ(90deg);
+}
+.check:checked ~ .hamburger-menu .menu-line--1  {
+    transform: rotateZ(-40deg);
+}
+.check:checked ~  .hamburger-menu .menu-line--2 {
+   opacity: 0;
+}
+.check:checked ~  .hamburger-menu .menu-line--3 {
+    transform: rotateZ(40deg);
+}
+.show__menu {
+    right: 0;
+}
